@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+
+    .topnav {
+      overflow: hidden;
+      background-color: powderblue;
+      }
+
+    .topnav a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+      }
+
+    .topnav a.active {
+      background-color: powderblue;
+      color: black;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="topnav">
+    <a  href="/home/">Home</a>
+    <a  href="/web_development/">Web Development</a>
+    <a  href="/blockchain_technology/">Blockchain Technology</a>
+    <a  href="/cryptocurrency/">Cryptocurrency</a>  
+  </div><br>
+  
+  <div   style="background-color: powderblue; padding-left:16px">
+    <h2>Write your Blog.</h2>
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <label for="title">title:</label>
+        <input type="text" name="title" id="title" placeholder="Write your blog title.."><br>
+
+        <label for="summary">blog summary:</label>
+        <input type="text" name="summary" id="summary" placeholder="Write your blog summary.."><br>
+
+        <label for="categories">Choose a categories:</label>
+        <select id="categories" name="categories">
+            <option value="web_development">web development</option>
+            <option value="blockchain_technology">blockchain technology</option>
+            <option value="cryptocurrency" selected>cryptocurrency</option>
+
+        </select>
+
+        <input type="submit">
+
+    </form>
+
+</div>
+  
+  <div style="padding-left:16px">
+    <div style="background-color: aliceblue;"> 
+      <div style="float: left; width: 100%;">
+          {% for bg in blog %}
+          <div style="background-color: aliceblue; padding: 20px; margin-top: 20px;"> 
+              <h1>{{bg.m_title}}</h1>
+              <h6>{{bg.m_categories}}</h6>
+              <h6>{{bg.m_date_and_time}}</h6>
+              <p>{{bg.m_summary}}</p>                   
+          </div>  
+          {% endfor %}      
+      </div>             
+  </div>
+  
+  <div style="background-color: aliceblue;"> 
+  <div style="float: left; width: 100%;">
+      {% for wd in web_development %}
+      <div style="background-color: aliceblue; padding: 20px; margin-top: 20px;"> 
+          <h1>{{wd.m_title}}</h1>
+          <h6>{{wd.m_categories}}</h6>
+          <h6>{{wd.m_date_and_time}}</h6>
+          <p>{{wd.m_summary}}</p>                   
+      </div>  
+      {% endfor %}      
+  </div>             
+  </div>    
+  
+  <div style="background-color: aliceblue;"> 
+  <div style="float: left; width: 100%;">
+      {% for bt in blockchain_technology %}
+      <div style="background-color: aliceblue; padding: 20px; margin-top: 20px;"> 
+          <h1>{{bt.m_title}}</h1>
+          <h6>{{bt.m_categories}}</h6>
+          <h6>{{bt.m_date_and_time}}</h6>
+          <p>{{bt.m_summary}}</p>                   
+      </div>  
+      {% endfor %}      
+  </div>             
+  </div>
+  
+  <div style="background-color: aliceblue;"> 
+  <div style="float: left; width: 100%;">
+      {% for cp in cryptocurrency %}
+      <div style="background-color: aliceblue; padding: 20px; margin-top: 20px;"> 
+          <h1>{{cp.m_title}}</h1>
+          <h6>{{cp.m_categories}}</h6>
+          <h6>{{cp.m_date_and_time}}</h6>
+          <p>{{cp.m_summary}}</p>                   
+      </div>  
+      {% endfor %}      
+  </div>             
+  </div>
+  
+  <div style="background-color: aliceblue;"> 
+  <div style="float: left; width: 100%;">
+      {% for cc in creatCategories %}
+      <div style="background-color: aliceblue; padding: 20px; margin-top: 20px;"> 
+          <h1>{{cc.m_title}}</h1>
+          <h6>{{cc.m_categories}}</h6>
+          <h6>{{cc.m_date_and_time}}</h6>
+          <p>{{cc.m_summary}}</p>                   
+      </div>  
+      {% endfor %}      
+  </div>             
+  </div>
+  
+  </div>
+  
+  
+</body>
+</html>

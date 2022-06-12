@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing Up</title>
+
+
+
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; box-sizing: border-box;">
+    <div style="text-align:center; background: powderblue">
+
+    <h1>Sing Up</h1>
+
+    <form action="" method="POST" style="border:1px solid rgb(15, 15, 15)">
+        {% csrf_token %}
+        <div style="padding: 16px;">   
+        <div>
+            <label for="frist_name">Frist Name</label>
+            <input style=" 
+            outline: none;" type="text" name="frist_name" id="frist_name" placeholder="Frist Name..">
+        </div><br>
+
+        <div>
+            <label for="last_name">Last Name</label>
+            <input style=" 
+            outline: none;" type="text" name="last_name" id="last_name" placeholder="Last Name..">
+        </div><br>
+
+        <div>
+            <label for="email">Email</label>
+            <input style=" 
+            outline: none;" type="email" name="email" id="email" placeholder="Email ..">
+        </div><br>
+
+        <div>
+            <label for="password">Password</label>
+            <input style="
+            outline: none;" type="password" name="password" placeholder="password..">
+        </div><br>
+
+        <h3 style="color: red; padding: 16px;  background-color: wheat;">{{error}}</h3>
+
+
+        <button type="submit" class="signup">Sign Up</button><br>
+
+
+        <div style="background-color: aliceblue;">
+            <h4>If you already have an account.</h4>
+            <button><a style="text-decoration: none; color: black; " href="/login/">Log In</a></button>
+        </div>
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>
